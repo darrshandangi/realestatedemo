@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atelier Noir Interiors — Luxury Interior Design, USA</title>
+    <meta name="description" content="Atelier Noir Interiors is a premier luxury interior design firm crafting bespoke residential, commercial, and hospitality spaces across the United States.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- GSAP CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+<!-- ═══ Sparkle Cursor Canvas ═══ -->
+<canvas id="sparkle-canvas"></canvas>
+
+<!-- ═══════════════════════════════════════
+     NAVBAR
+     ═══════════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <a href="#" class="nav-logo" id="nav-logo">
+            <span class="nav-logo-name">Atelier Noir</span>
+            <span class="nav-logo-tagline">Interior Design</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact" class="nav-cta">Contact</a></li>
+        </ul>
+        <div class="nav-toggle" id="nav-toggle">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO — SCROLL FRAME ANIMATION
+     ═══════════════════════════════════════ -->
+<section id="hero-scroll-container">
+    <div class="hero-sticky">
+        <!-- Loading screen -->
+        <div class="hero-loader" id="hero-loader">
+            <div class="loader-text">Preparing Your Experience</div>
+            <div class="loader-bar-track">
+                <div class="loader-bar-fill" id="loader-bar-fill"></div>
+            </div>
+            <div class="loader-percent" id="loader-percent">0%</div>
+        </div>
+
+        <!-- The frame image -->
+        <img class="hero-frame-img" id="hero-frame-img" src="frames/ezgif-frame-001.jpg" alt="Luxury interior walkthrough">
+
+        <!-- Dark gradient overlay -->
+        <div class="hero-gradient-overlay"></div>
+
+        <!-- ── Text Overlay 1: Welcome (0%–30%) ── -->
+        <div class="hero-text-overlay" id="hero-text-1">
+            <span class="hero-eyebrow">Established 2009 · New York</span>
+            <h1>Atelier<br><em>Noir</em></h1>
+            <div class="hero-line"></div>
+            <p class="hero-sub">Where art meets architecture — crafting spaces that transcend the ordinary</p>
+        </div>
+
+        <!-- ── Text Overlay 2: Midpoint (35%–65%) ── -->
+        <div class="hero-text-overlay" id="hero-text-2">
+            <span class="hero-eyebrow">Our Philosophy</span>
+            <h1>Design Is<br><em>Emotion</em></h1>
+            <div class="hero-line"></div>
+            <p class="hero-sub">Every room tells a story. We author yours with precision, passion, and an unwavering eye for beauty.</p>
+        </div>
+
+        <!-- ── Text Overlay 3: CTA (70%–100%) ── -->
+        <div class="hero-text-overlay" id="hero-text-3">
+            <span class="hero-eyebrow">Begin Your Journey</span>
+            <h1>Step<br><em>Inside</em></h1>
+            <div class="hero-line"></div>
+            <p class="hero-sub">Experience world-class design in an environment of absolute refinement</p>
+            <a href="#contact" class="hero-btn">Schedule a Consultation</a>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="hero-scroll-indicator" id="hero-scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-line"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     ABOUT SECTION
+     ═══════════════════════════════════════ -->
+<section class="about-section" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <!-- Left Column -->
+            <div class="about-left">
+                <div class="eyebrow reveal-up">Who We Are</div>
+                <h2 class="section-heading reveal-up">Defining Luxury,<br>One Space at <em>a Time</em></h2>
+                <div class="gold-line reveal-up"></div>
+                <p class="reveal-up">
+                    Atelier Noir Interiors is a New York-based design house specializing in ultra-luxury residential, 
+                    commercial, and hospitality environments. For over fifteen years, our team of world-class designers 
+                    has transformed the most discerning visions into immersive spatial experiences.
+                </p>
+                <p class="reveal-up" style="margin-top: 16px;">
+                    We don't follow trends — we set them. Every project begins with deep listening: understanding not 
+                    just what a space should look like, but how it should feel, breathe, and evolve alongside its inhabitants.
+                </p>
+            </div>
+
+            <!-- Gold Divider -->
+            <div class="about-divider reveal-scale"></div>
+
+            <!-- Right Column -->
+            <div class="about-right">
+                <blockquote class="about-quote reveal-right">
+                    "True luxury is invisible — it's the feeling of walking into a room and knowing everything is exactly where it belongs."
+                </blockquote>
+                <p class="about-quote-author reveal-right">— Isabelle Marchand, Founder</p>
+
+                <div class="about-stats">
+                    <div class="stat-item reveal-up">
+                        <div class="stat-number" data-count="15">0</div>
+                        <div class="stat-label">Years</div>
+                    </div>
+                    <div class="stat-item reveal-up">
+                        <div class="stat-number" data-count="320">0</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat-item reveal-up">
+                        <div class="stat-number" data-count="47">0</div>
+                        <div class="stat-label">Awards</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SERVICES SECTION
+     ═══════════════════════════════════════ -->
+<section class="services-section" id="services">
+    <div class="container">
+        <!-- Header -->
+        <div class="services-header">
+            <div class="eyebrow reveal-up">What We Do</div>
+            <h2 class="section-heading reveal-up">Crafted for <em>Every</em> World</h2>
+            <p class="section-subtext reveal-up">From private residences to five-star hotels, we bring the same obsessive attention to detail and uncompromising standard of excellence.</p>
+        </div>
+
+        <!-- Cards -->
+        <div class="services-grid">
+            <!-- Card 1 -->
+            <div class="service-card reveal-up">
+                <div style="overflow:hidden;">
+                    <img class="service-card-image" src="images/service-residential.jpg" alt="Luxury residential interior design">
+                </div>
+                <div class="service-card-content">
+                    <div class="service-card-number">01</div>
+                    <h3 class="service-card-title">Residential</h3>
+                    <p class="service-card-desc">Penthouses, estates, and private residences designed as sanctuaries — deeply personal, uncompromisingly luxurious.</p>
+                    <a href="#" class="service-card-link">Explore <span class="arrow"></span></a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="service-card reveal-up">
+                <div style="overflow:hidden;">
+                    <img class="service-card-image" src="images/service-commercial.jpg" alt="Luxury commercial interior design">
+                </div>
+                <div class="service-card-content">
+                    <div class="service-card-number">02</div>
+                    <h3 class="service-card-title">Commercial</h3>
+                    <p class="service-card-desc">Executive offices, showrooms, and flagship spaces that command presence and elevate every brand interaction.</p>
+                    <a href="#" class="service-card-link">Explore <span class="arrow"></span></a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="service-card reveal-up">
+                <div style="overflow:hidden;">
+                    <img class="service-card-image" src="images/service-hospitality.jpg" alt="Luxury hospitality interior design">
+                </div>
+                <div class="service-card-content">
+                    <div class="service-card-number">03</div>
+                    <h3 class="service-card-title">Hospitality</h3>
+                    <p class="service-card-desc">Hotels, restaurants, and private clubs where every detail conspires to create an unforgettable guest experience.</p>
+                    <a href="#" class="service-card-link">Explore <span class="arrow"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     PORTFOLIO — HORIZONTAL SCROLL
+     ═══════════════════════════════════════ -->
+<section class="portfolio-section" id="portfolio">
+    <div class="container">
+        <div class="portfolio-header">
+            <div class="eyebrow reveal-up">Selected Work</div>
+            <h2 class="section-heading reveal-up">A Curated <em>Portfolio</em></h2>
+            <p class="section-subtext reveal-up">Each project is a unique narrative — a collaboration between our vision and our client's world.</p>
+        </div>
+    </div>
+
+    <div class="portfolio-scroll-wrapper" id="portfolio-scroll-wrapper">
+        <div class="portfolio-track" id="portfolio-track">
+            <!-- Item 1 -->
+            <div class="portfolio-item">
+                <img src="images/portfolio-penthouse.jpg" alt="Manhattan Penthouse by Atelier Noir">
+                <div class="portfolio-item-overlay">
+                    <div class="portfolio-item-category">Residential</div>
+                    <div class="portfolio-item-title">Manhattan Penthouse</div>
+                </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="portfolio-item">
+                <img src="images/portfolio-bathroom.jpg" alt="Spa Retreat Bathroom by Atelier Noir">
+                <div class="portfolio-item-overlay">
+                    <div class="portfolio-item-category">Residential</div>
+                    <div class="portfolio-item-title">The Spa Retreat</div>
+                </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="portfolio-item">
+                <img src="images/portfolio-dining.jpg" alt="Private Dining by Atelier Noir">
+                <div class="portfolio-item-overlay">
+                    <div class="portfolio-item-category">Hospitality</div>
+                    <div class="portfolio-item-title">The Wine Room</div>
+                </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="portfolio-item">
+                <img src="images/portfolio-bedroom.jpg" alt="Alpine Suite by Atelier Noir">
+                <div class="portfolio-item-overlay">
+                    <div class="portfolio-item-category">Residential</div>
+                    <div class="portfolio-item-title">Alpine Suite</div>
+                </div>
+            </div>
+            <!-- Item 5 (reuse) -->
+            <div class="portfolio-item">
+                <img src="images/service-commercial.jpg" alt="Executive Tower by Atelier Noir">
+                <div class="portfolio-item-overlay">
+                    <div class="portfolio-item-category">Commercial</div>
+                    <div class="portfolio-item-title">Executive Tower</div>
+                </div>
+            </div>
+            <!-- Item 6 (reuse) -->
+            <div class="portfolio-item">
+                <img src="images/service-hospitality.jpg" alt="The Grand Lobby by Atelier Noir">
+                <div class="portfolio-item-overlay">
+                    <div class="portfolio-item-category">Hospitality</div>
+                    <div class="portfolio-item-title">The Grand Lobby</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     TESTIMONIALS
+     ═══════════════════════════════════════ -->
+<section class="testimonials-section" id="testimonials">
+    <div class="container">
+        <div class="testimonials-inner">
+            <div class="eyebrow reveal-up" style="justify-content:center;">
+                <span style="display:none;"></span>Client Voices
+            </div>
+            <div class="testimonials-carousel" id="testimonials-carousel">
+                <!-- Slide 1 -->
+                <div class="testimonial-slide active" data-slide="0">
+                    <div class="testimonial-quote-mark">"</div>
+                    <p class="testimonial-text">Atelier Noir didn't just design our home — they understood our soul and translated it into every surface, every shadow, every moment of light.</p>
+                    <div class="testimonial-author">Victoria Ashford</div>
+                    <div class="testimonial-role">Private Client · Greenwich, CT</div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="testimonial-slide" data-slide="1">
+                    <div class="testimonial-quote-mark">"</div>
+                    <p class="testimonial-text">Working with this team felt like collaborating with artists. The result is a hotel lobby that stops every guest in their tracks.</p>
+                    <div class="testimonial-author">James Chen</div>
+                    <div class="testimonial-role">CEO · The Peninsula Group</div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="testimonial-slide" data-slide="2">
+                    <div class="testimonial-quote-mark">"</div>
+                    <p class="testimonial-text">Fifteen years and three projects later, there is no one else I would trust with my spaces. They are, quite simply, the best in the world.</p>
+                    <div class="testimonial-author">Sofia Reyes</div>
+                    <div class="testimonial-role">Art Collector · Miami Beach, FL</div>
+                </div>
+            </div>
+            <div class="testimonial-dots" id="testimonial-dots">
+                <button class="testimonial-dot active" data-index="0" aria-label="Testimonial 1"></button>
+                <button class="testimonial-dot" data-index="1" aria-label="Testimonial 2"></button>
+                <button class="testimonial-dot" data-index="2" aria-label="Testimonial 3"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CTA SECTION
+     ═══════════════════════════════════════ -->
+<section class="cta-section" id="contact">
+    <div class="container">
+        <div class="cta-inner">
+            <div class="eyebrow reveal-up">Let's Create Together</div>
+            <h2 class="section-heading reveal-up">Your Vision,<br>Our <em>Mastery</em></h2>
+            <p class="section-subtext reveal-up">Every extraordinary space begins with a single conversation. Tell us about your vision, and we'll show you what's possible.</p>
+            <a href="#" class="cta-btn reveal-up"><span>Schedule a Consultation</span></a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="nav-logo">
+                    <span class="nav-logo-name">Atelier Noir</span>
+                    <span class="nav-logo-tagline">Interior Design</span>
+                </div>
+                <p>Crafting extraordinary spaces for extraordinary lives. New York · Los Angeles · Miami · London</p>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-col-title">Services</h4>
+                <ul>
+                    <li><a href="#">Residential</a></li>
+                    <li><a href="#">Commercial</a></li>
+                    <li><a href="#">Hospitality</a></li>
+                    <li><a href="#">Art Curation</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-col-title">Studio</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Process</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-col-title">Connect</h4>
+                <ul>
+                    <li><a href="#">hello@ateliernoir.com</a></li>
+                    <li><a href="#">+1 (212) 555-0190</a></li>
+                    <li><a href="#">110 Greene Street</a></li>
+                    <li><a href="#">New York, NY 10012</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Atelier Noir Interiors. All rights reserved.</p>
+            <div class="footer-socials">
+                <a href="#">Instagram</a>
+                <a href="#">Pinterest</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
