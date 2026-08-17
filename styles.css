@@ -158,16 +158,16 @@ button {
     width: 100%;
     z-index: 1000;
     padding: 16px 0;
-    background: rgba(18, 18, 18, 0.65);
-    backdrop-filter: blur(24px) saturate(180%);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: padding var(--transition-fast), background var(--transition-fast);
 }
 
 .navbar.scrolled {
     padding: 12px 0;
-    background: rgba(18, 18, 18, 0.85);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .navbar .container {
