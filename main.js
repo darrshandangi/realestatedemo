@@ -193,19 +193,20 @@ document.addEventListener('DOMContentLoaded', () => {
     function setupHeroTextAnimations() {
         const heroText1 = document.getElementById('hero-text-1');
 
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: heroContainer,
-                start: 'top top',
-                end: 'bottom bottom',
-                scrub: 0.5,
-            }
-        })
-        // Starts fully visible, smoothly fades out and moves up until 15% of the scroll
-        .fromTo(heroText1,
+        // Fades out completely over the first 15% (1500px) of scrolling
+        gsap.fromTo(heroText1,
             { opacity: 1, y: 0 },
-            { opacity: 0, y: -60, duration: 0.15, ease: 'power2.inOut' },
-            0
+            {
+                opacity: 0, 
+                y: -60, 
+                ease: 'power2.inOut',
+                scrollTrigger: {
+                    trigger: heroContainer,
+                    start: 'top top',
+                    end: '+=1500', 
+                    scrub: true,
+                }
+            }
         );
     }
 
