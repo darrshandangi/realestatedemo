@@ -182,10 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
        ═══════════════════════════════════════ */
     function setupHeroTextAnimations() {
         const heroText1 = document.getElementById('hero-text-1');
-        const heroText2 = document.getElementById('hero-text-2');
-        const heroText3 = document.getElementById('hero-text-3');
 
-        // Text 1: 0%–30%
         gsap.timeline({
             scrollTrigger: {
                 trigger: heroContainer,
@@ -194,38 +191,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrub: 0.5,
             }
         })
-        // Overlay 1 in
+        // Starts fully visible, fades out early in the scroll
         .fromTo(heroText1,
-            { opacity: 0, y: 50 },
-            { opacity: 1, y: 0, duration: 0.06, ease: 'power2.out' },
-            0.0
-        )
-        // Overlay 1 out
-        .to(heroText1,
-            { opacity: 0, y: -30, duration: 0.08, ease: 'power2.in' },
-            0.2
-        )
-        // Overlay 2 in
-        .fromTo(heroText2,
-            { opacity: 0, y: 50 },
-            { opacity: 1, y: 0, duration: 0.06, ease: 'power2.out' },
-            0.34
-        )
-        // Overlay 2 out
-        .to(heroText2,
-            { opacity: 0, y: -30, duration: 0.08, ease: 'power2.in' },
-            0.55
-        )
-        // Overlay 3 in
-        .fromTo(heroText3,
-            { opacity: 0, y: 50 },
-            { opacity: 1, y: 0, duration: 0.06, ease: 'power2.out' },
-            0.68
-        )
-        // Overlay 3 stays till end
-        .to(heroText3,
-            { opacity: 0, y: -20, duration: 0.04, ease: 'power2.in' },
-            0.95
+            { opacity: 1, y: 0 },
+            { opacity: 0, y: -30, duration: 0.05, ease: 'power2.in' },
+            0.02
         );
     }
 
