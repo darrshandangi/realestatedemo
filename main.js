@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function setupHeroTextAnimations() {
         const heroText1 = document.getElementById('hero-text-1');
 
-        // Fades out completely over the first 15% (1500px) of scrolling
+        // Fades out completely over the first 300px of scrolling (very early)
         gsap.fromTo(heroText1,
             { opacity: 1, y: 0 },
             {
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrollTrigger: {
                     trigger: heroContainer,
                     start: 'top top',
-                    end: '+=1500', 
+                    end: '+=300', 
                     scrub: true,
                 }
             }
