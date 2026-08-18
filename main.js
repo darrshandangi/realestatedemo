@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
             trigger: heroContainer,
             start: "top top",
             end: "bottom bottom",
-            scrub: true, // Immediate mapping for fast/smooth response
+            scrub: 1, // Adds a 1-second smoothing/momentum effect to the scroll
         },
         onUpdate: () => {
             if (framesLoaded) {
