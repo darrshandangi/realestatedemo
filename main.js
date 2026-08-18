@@ -150,32 +150,42 @@ document.addEventListener('DOMContentLoaded', () => {
         frameImages[i] = img;
     }
 
-    // Scroll-driven frame update
-    function updateHeroFrame() {
-        if (!framesLoaded || !heroContainer) return;
-        const rect = heroContainer.getBoundingClientRect();
-        const scrollable = rect.height - window.innerHeight;
-        const scrolled = -rect.top;
-        const progress = Math.max(0, Math.min(1, scrolled / scrollable));
+    // GSAP Scroll-driven frame update for smooth and fast animation
+    const frameObj = { currentFrame: 0 };
 
-        const frameIndex = Math.round(progress * (FRAME_COUNT - 1));
-        if (frameIndex !== currentFrame) {
-            currentFrame = frameIndex;
-            const target = frameImages[frameIndex];
-            if (target && target.complete) {
-                heroImg.src = target.src;
+    gsap.to(frameObj, {
+        currentFrame: FRAME_COUNT - 1,
+        snap: "currentFrame",
+        ease: "none",
+        scrollTrigger: {
+            trigger: heroContainer,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: true, // Immediate mapping for fast/smooth response
+        },
+        onUpdate: () => {
+            if (framesLoaded) {
+                const target = frameImages[frameObj.currentFrame];
+                if (target && target.complete) {
+                    heroImg.src = target.src;
+                }
             }
         }
+    });
 
-        // Fade scroll indicator
-        if (scrollIndicator) {
-            scrollIndicator.style.opacity = Math.max(0, 1 - progress * 8);
-        }
+    // Fade scroll indicator
+    if (scrollIndicator) {
+        gsap.to(scrollIndicator, {
+            opacity: 0,
+            ease: "none",
+            scrollTrigger: {
+                trigger: heroContainer,
+                start: "top top",
+                end: "+=800",
+                scrub: true
+            }
+        });
     }
-
-    window.addEventListener('scroll', () => {
-        requestAnimationFrame(updateHeroFrame);
-    }, { passive: true });
 
     /* ═══════════════════════════════════════
        3. HERO TEXT OVERLAYS (GSAP ScrollTrigger)
@@ -191,11 +201,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrub: 0.5,
             }
         })
-        // Starts fully visible, fades out early in the scroll
+        // Starts fully visible, smoothly fades out and moves up until 15% of the scroll
         .fromTo(heroText1,
             { opacity: 1, y: 0 },
-            { opacity: 0, y: -30, duration: 0.05, ease: 'power2.in' },
-            0.02
+            { opacity: 0, y: -60, duration: 0.15, ease: 'power2.inOut' },
+            0
         );
     }
 
