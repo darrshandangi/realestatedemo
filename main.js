@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
         mouseX = e.clientX;
         mouseY = e.clientY;
         isMouseOnPage = true;
-        // Spawn sparkles on move
-        for (let i = 0; i < 2; i++) {
+        // Spawn sparkles on move (more dense since they are tiny)
+        for (let i = 0; i < 4; i++) {
             sparkles.push(createSparkle(mouseX, mouseY));
         }
     });
@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createSparkle(x, y) {
         const angle = Math.random() * Math.PI * 2;
-        const speed = Math.random() * 1.5 + 0.5;
-        const size = Math.random() * 3 + 1.5;
+        const speed = Math.random() * 1.2 + 0.3;
+        const size = Math.random() * 1.0 + 0.4; // Tiny size (0.4 to 1.4)
         const goldHue = 35 + Math.random() * 15;
         return {
             x: x + (Math.random() - 0.5) * 16,
@@ -96,11 +96,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 sparkleCtx.fill();
             }
 
-            // Glow
-            sparkleCtx.globalAlpha = s.life * 0.3;
+            // Subtle tiny glow
+            sparkleCtx.globalAlpha = s.life * 0.2;
             sparkleCtx.fillStyle = s.color;
             sparkleCtx.beginPath();
-            sparkleCtx.arc(s.x, s.y, s.size * 3, 0, Math.PI * 2);
+            sparkleCtx.arc(s.x, s.y, s.size * 1.5, 0, Math.PI * 2);
             sparkleCtx.fill();
         }
 
