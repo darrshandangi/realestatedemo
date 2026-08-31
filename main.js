@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             rotation: Math.random() * 360,
             rotationSpeed: (Math.random() - 0.5) * 8,
             color: `hsl(${goldHue}, 70%, ${55 + Math.random() * 20}%)`,
-            type: Math.random() > 0.5 ? 'star' : 'circle',
+            type: 'star', // ONLY stars, no big circles
         };
     }
 
@@ -87,21 +87,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (s.type === 'star') {
                 sparkleCtx.strokeStyle = s.color;
-                sparkleCtx.lineWidth = 0.8;
-                drawStar(sparkleCtx, s.x, s.y, s.size * 2, s.rotation);
-            } else {
-                sparkleCtx.fillStyle = s.color;
-                sparkleCtx.beginPath();
-                sparkleCtx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
-                sparkleCtx.fill();
-            }
-
-            // Subtle tiny glow
-            sparkleCtx.globalAlpha = s.life * 0.2;
-            sparkleCtx.fillStyle = s.color;
-            sparkleCtx.beginPath();
-            sparkleCtx.arc(s.x, s.y, s.size * 1.5, 0, Math.PI * 2);
-            sparkleCtx.fill();
+                sparkleCtx.lineWidth = 0.6;
+                drawStar(sparkleCtx, s.x, s.y, s.size, s.rotation); // smaller size
+            } 
+            // Removed all circle shapes and big glows
         }
 
         sparkleCtx.globalAlpha = 1;
