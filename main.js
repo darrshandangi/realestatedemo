@@ -119,10 +119,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let framesLoaded = false;
     let currentFrame = 0;
 
+    const isMobile = window.innerWidth <= 768;
+    const frameFolder = isMobile ? 'frames/mobile' : 'frames';
+
     for (let i = 0; i < FRAME_COUNT; i++) {
         const img = new Image();
         const num = String(i + 1).padStart(3, '0');
-        img.src = `frames/ezgif-frame-${num}.jpg`;
+        img.src = `${frameFolder}/ezgif-frame-${num}.jpg`;
         img.onload = img.onerror = () => {
             loadedCount++;
             const pct = Math.round((loadedCount / FRAME_COUNT) * 100);
