@@ -377,8 +377,8 @@ button {
     color: #FCD34D;
     text-shadow: none;
     filter: 
-        drop-shadow(7px 5px 5px rgba(0, 0, 0, 0.8))
-        drop-shadow(15px 12px 22px rgba(0, 0, 0, 0.58));
+        drop-shadow(6px 5px 5px rgba(0, 0, 0, 0.5))
+        drop-shadow(14px 12px 20px rgba(0, 0, 0, 0.35));
     margin: 0;
 }
 
