@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
        2. HERO SCROLL FRAME ANIMATION (PRESERVED)
        ═══════════════════════════════════════ */
     const FRAME_COUNT = 300;
-    const SCROLL_HEIGHT = 10000;
+    const SCROLL_HEIGHT = 3200; // Snappy, fast frame scrubbing (reduced from 10000)
     const heroContainer = document.getElementById('hero-scroll-container');
     const heroImg = document.getElementById('hero-frame-img');
     const heroLoader = document.getElementById('hero-loader');
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             trigger: heroContainer,
             start: "top top",
             end: "bottom bottom",
-            scrub: 0.3,
+            scrub: 0.1, // Ultra-responsive scrubbing without lag
         },
         onUpdate: () => {
             const idx = Math.min(Math.max(Math.round(frameObj.currentFrame), 0), FRAME_COUNT - 1);
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollTrigger: {
                 trigger: heroContainer,
                 start: "top top",
-                end: "+=800",
+                end: "+=350",
                 scrub: true
             }
         });
