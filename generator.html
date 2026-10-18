@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Link & Outreach Message Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #090a0f;
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+    .card {
+      background: #13151f;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 640px;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge {
+      font-size: 11px;
+      text-transform: uppercase;
+      background: #3b82f6;
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 99px;
+      font-weight: 700;
+    }
+    p.desc {
+      color: #94a3b8;
+      font-size: 14px;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #cbd5e1;
+      margin-bottom: 6px;
+    }
+    input {
+      width: 100%;
+      background: #1c1f2e;
+      border: 1px solid #2d3348;
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input:focus {
+      border-color: #3b82f6;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .result-box {
+      margin-top: 24px;
+      background: #0d0e14;
+      border: 1px solid #232738;
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .result-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #64748b;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .link-display {
+      word-break: break-all;
+      color: #60a5fa;
+      font-size: 13px;
+      font-family: monospace;
+      padding: 10px;
+      background: #161824;
+      border-radius: 6px;
+      border: 1px solid #2b3044;
+      margin-bottom: 12px;
+      display: block;
+      text-decoration: none;
+    }
+    .link-display:hover {
+      text-decoration: underline;
+    }
+    .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+    button {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    button:hover {
+      background: #1d4ed8;
+    }
+    button.secondary {
+      background: #1e293b;
+      color: #cbd5e1;
+    }
+    button.secondary:hover {
+      background: #334155;
+    }
+    .pitch-text {
+      background: #161824;
+      border: 1px solid #2b3044;
+      border-radius: 6px;
+      padding: 12px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #e2e8f0;
+      margin-bottom: 12px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1><span>Personalized Link Generator</span> <span class="badge">Live</span></h1>
+    <p class="desc">Generate personalized demo links and outreach messages for small businesses instantly.</p>
+
+    <div class="form-group">
+      <label>Hostinger Domain / Base URL</label>
+      <input type="text" id="baseUrl" value="https://yourdomain.com/">
+    </div>
+
+    <div class="form-group">
+      <label>Business Name (e.g. Apex Luxury Homes)</label>
+      <input type="text" id="bizName" placeholder="Apex Real Estate & Interiors" value="Apex Real Estate & Interiors">
+    </div>
+
+    <div class="row">
+      <div class="form-group">
+        <label>City (Optional)</label>
+        <input type="text" id="city" placeholder="Miami" value="Miami">
+      </div>
+      <div class="form-group">
+        <label>Phone (Optional)</label>
+        <input type="text" id="phone" placeholder="(305) 555-0199" value="(305) 555-0199">
+      </div>
+    </div>
+
+    <div class="result-box">
+      <div class="result-title">Generated Personalized Link</div>
+      <a href="#" target="_blank" id="generatedLink" class="link-display"></a>
+      <div class="btn-group">
+        <button onclick="copyLink()">📋 Copy Demo Link</button>
+        <button class="secondary" onclick="openDemo()">🚀 Test in Browser</button>
+      </div>
+    </div>
+
+    <div class="result-box" style="margin-top: 16px;">
+      <div class="result-title">Ready-To-Send Cold Outreach Message</div>
+      <div id="pitchText" class="pitch-text"></div>
+      <button onclick="copyPitch()">📋 Copy Outreach Message</button>
+    </div>
+  </div>
+
+  <script>
+    const baseUrlInput = document.getElementById('baseUrl');
+    const bizNameInput = document.getElementById('bizName');
+    const cityInput = document.getElementById('city');
+    const phoneInput = document.getElementById('phone');
+    const generatedLink = document.getElementById('generatedLink');
+    const pitchText = document.getElementById('pitchText');
+
+    function update() {
+      let base = baseUrlInput.value.trim();
+      if (!base.endsWith('/')) base += '/';
+      const name = bizNameInput.value.trim() || 'Your Business';
+      const city = cityInput.value.trim();
+      const phone = phoneInput.value.trim();
+
+      const params = new URLSearchParams();
+      params.set('name', name);
+      if (city) params.set('city', city);
+      if (phone) params.set('phone', phone);
+
+      const fullUrl = base + '?' + params.toString();
+      generatedLink.textContent = fullUrl;
+      generatedLink.href = fullUrl;
+
+      const message = `Hey team at ${name},\n\nI was looking into ${city ? city + ' businesses' : 'your space'} and loved what you guys do. I noticed your current web presence could showcase your projects with a far more high-end feel, so I actually went ahead and designed a modern interactive concept website specifically for ${name}.\n\nYou can preview the live demo here: ${fullUrl}\n\nWould you be open to me sending over a 2-minute video walkthrough of it?`;
+      pitchText.textContent = message;
+    }
+
+    [baseUrlInput, bizNameInput, cityInput, phoneInput].forEach(el => el.addEventListener('input', update));
+    update();
+
+    function copyLink() {
+      navigator.clipboard.writeText(generatedLink.href);
+      alert('✅ Copied demo link to clipboard!');
+    }
+
+    function openDemo() {
+      window.open(generatedLink.href, '_blank');
+    }
+
+    function copyPitch() {
+      navigator.clipboard.writeText(pitchText.textContent);
+      alert('✅ Copied pitch message to clipboard!');
+    }
+  </script>
+</body>
+</html>
