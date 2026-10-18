@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atelier Noir Interiors — Luxury Interior Design, USA</title>
-    <meta name="description" content="Atelier Noir Interiors is a premier luxury interior design firm crafting bespoke residential, commercial, and hospitality spaces across the United States.">
-    <link rel="stylesheet" href="styles.css?v=3">
+    <title>Premier Realty — Find Your Dream Home</title>
+    <meta name="description" content="Premier Realty helps you find your perfect home. Browse houses, apartments, and condos with a trusted residential real estate broker.">
+    <link rel="stylesheet" href="styles.css?v=10">
     <!-- GSAP CDN -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
@@ -21,15 +21,15 @@
 <nav class="navbar" id="navbar">
     <div class="container">
         <a href="#" class="nav-logo" id="nav-logo">
-            <span class="nav-logo-name">Atelier Noir</span>
-            <span class="nav-logo-tagline">Interior Design</span>
+            <span class="nav-logo-name">Premier Realty</span>
+            <span class="nav-logo-tagline">Real Estate</span>
         </a>
         <ul class="nav-links" id="nav-links">
-            <li><a href="#about">About</a></li>
+            <li><a href="#listings">Listings</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact" class="nav-cta">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
         </ul>
         <div class="nav-toggle" id="nav-toggle">
             <span></span><span></span><span></span>
@@ -38,7 +38,7 @@
 </nav>
 
 <!-- ═══════════════════════════════════════
-     HERO — SCROLL FRAME ANIMATION
+     HERO — SCROLL FRAME ANIMATION (PRESERVED)
      ═══════════════════════════════════════ -->
 <section id="hero-scroll-container">
     <div class="hero-sticky">
@@ -52,7 +52,7 @@
         </div>
 
         <!-- The frame image -->
-        <img class="hero-frame-img" id="hero-frame-img" src="frames/ezgif-frame-001.jpg" alt="Luxury interior walkthrough">
+        <img class="hero-frame-img" id="hero-frame-img" src="frames/ezgif-frame-001.jpg" alt="Luxury property walkthrough">
 
         <!-- Dark gradient overlay -->
         <div class="hero-gradient-overlay"></div>
@@ -60,10 +60,10 @@
         <!-- ── Text Overlay 1: Welcome (0%–30%) ── -->
         <div class="hero-text-overlay" id="hero-text-1">
             <div class="hero-text-card">
-                <span class="hero-eyebrow">Established 2009 · New York</span>
-                <h1>Atelier<br><em>Noir</em></h1>
+                <span class="hero-eyebrow">Your Trusted Real Estate Partner</span>
+                <h1>Find Your<br><em>Dream Home</em></h1>
                 <div class="hero-line"></div>
-                <p class="hero-sub">Where art meets architecture — crafting spaces that transcend the ordinary</p>
+                <p class="hero-sub">We help families find the perfect place to call home — from cozy apartments to dream houses</p>
             </div>
         </div>
 
@@ -77,52 +77,165 @@
 </section>
 
 <!-- ═══════════════════════════════════════
-     ABOUT SECTION
+     FEATURED LISTINGS
      ═══════════════════════════════════════ -->
-<section class="about-section" id="about">
+<section class="listings-section" id="listings">
     <div class="container">
-        <div class="about-grid">
-            <!-- Left Column -->
-            <div class="about-left">
-                <div class="eyebrow reveal-up">Who We Are</div>
-                <h2 class="section-heading reveal-up">Defining Luxury,<br>One Space at <em>a Time</em></h2>
-                <div class="gold-line reveal-up"></div>
-                <p class="reveal-up">
-                    Atelier Noir Interiors is a New York-based design house specializing in ultra-luxury residential, 
-                    commercial, and hospitality environments. For over fifteen years, our team of world-class designers 
-                    has transformed the most discerning visions into immersive spatial experiences.
-                </p>
-                <p class="reveal-up" style="margin-top: 16px;">
-                    We don't follow trends — we set them. Every project begins with deep listening: understanding not 
-                    just what a space should look like, but how it should feel, breathe, and evolve alongside its inhabitants.
-                </p>
-            </div>
+        <div class="listings-header">
+            <div class="eyebrow reveal-up">Featured Properties</div>
+            <h2 class="section-heading reveal-up">Handpicked <em>Listings</em></h2>
+            <p class="section-subtext reveal-up">Browse our curated selection of homes, apartments, and condos — each chosen for exceptional value and lifestyle potential.</p>
+        </div>
 
-            <!-- Gold Divider -->
-            <div class="about-divider reveal-scale"></div>
-
-            <!-- Right Column -->
-            <div class="about-right">
-                <blockquote class="about-quote reveal-right">
-                    "True luxury is invisible — it's the feeling of walking into a room and knowing everything is exactly where it belongs."
-                </blockquote>
-                <p class="about-quote-author reveal-right">— Isabelle Marchand, Founder</p>
-
-                <div class="about-stats">
-                    <div class="stat-item reveal-up">
-                        <div class="stat-number" data-count="15">0</div>
-                        <div class="stat-label">Years</div>
-                    </div>
-                    <div class="stat-item reveal-up">
-                        <div class="stat-number" data-count="320">0</div>
-                        <div class="stat-label">Projects</div>
-                    </div>
-                    <div class="stat-item reveal-up">
-                        <div class="stat-number" data-count="47">0</div>
-                        <div class="stat-label">Awards</div>
+        <div class="listings-grid">
+            <!-- Listing 1 -->
+            <div class="listing-card reveal-up">
+                <div class="listing-card-image-wrapper">
+                    <img class="listing-card-image" src="images/listing-suburban-home.jpg" alt="Modern suburban home in Oakwood Heights">
+                    <span class="listing-card-badge">New</span>
+                </div>
+                <div class="listing-card-content">
+                    <div class="listing-card-price">$485,000</div>
+                    <div class="listing-card-address">1247 Oakwood Heights Dr, Austin, TX</div>
+                    <div class="listing-card-meta">
+                        <div class="listing-meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 22V8l9-6 9 6v14"/><path d="M9 22V12h6v10"/></svg>
+                            4 Beds
+                        </div>
+                        <div class="listing-meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16a1 1 0 011 1v3a4 4 0 01-4 4H7a4 4 0 01-4-4v-3a1 1 0 011-1z"/><path d="M6 12V5a2 2 0 012-2h3v2H9v7"/></svg>
+                            3 Baths
+                        </div>
+                        <div class="listing-meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18"/><path d="M12 3v18"/></svg>
+                            2,450 sqft
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Listing 2 -->
+            <div class="listing-card reveal-up">
+                <div class="listing-card-image-wrapper">
+                    <img class="listing-card-image" src="images/listing-apartment.jpg" alt="Luxury downtown apartment with city views">
+                    <span class="listing-card-badge">Featured</span>
+                </div>
+                <div class="listing-card-content">
+                    <div class="listing-card-price">$325,000</div>
+                    <div class="listing-card-address">850 Skyline Blvd, Unit 1402, Denver, CO</div>
+                    <div class="listing-card-meta">
+                        <div class="listing-meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 22V8l9-6 9 6v14"/><path d="M9 22V12h6v10"/></svg>
+                            2 Beds
+                        </div>
+                        <div class="listing-meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16a1 1 0 011 1v3a4 4 0 01-4 4H7a4 4 0 01-4-4v-3a1 1 0 011-1z"/><path d="M6 12V5a2 2 0 012-2h3v2H9v7"/></svg>
+                            2 Baths
+                        </div>
+                        <div class="listing-meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18"/><path d="M12 3v18"/></svg>
+                            1,180 sqft
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listing 3 -->
+            <div class="listing-card reveal-up">
+                <div class="listing-card-image-wrapper">
+                    <img class="listing-card-image" src="images/listing-family-home.jpg" alt="Charming family home with garden">
+                    <span class="listing-card-badge pending">Pending</span>
+                </div>
+                <div class="listing-card-content">
+                    <div class="listing-card-price">$395,000</div>
+                    <div class="listing-card-address">324 Elm Street, Maplewood, NJ</div>
+                    <div class="listing-card-meta">
+                        <div class="listing-meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 22V8l9-6 9 6v14"/><path d="M9 22V12h6v10"/></svg>
+                            3 Beds
+                        </div>
+                        <div class="listing-meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16a1 1 0 011 1v3a4 4 0 01-4 4H7a4 4 0 01-4-4v-3a1 1 0 011-1z"/><path d="M6 12V5a2 2 0 012-2h3v2H9v7"/></svg>
+                            2.5 Baths
+                        </div>
+                        <div class="listing-meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18"/><path d="M12 3v18"/></svg>
+                            1,950 sqft
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="listings-cta reveal-up">
+            <a href="#" class="btn-outline">
+                View All Listings
+                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     PROPERTY SEARCH TOOL
+     ═══════════════════════════════════════ -->
+<section class="search-section" id="search">
+    <div class="container">
+        <div class="search-inner reveal-scale">
+            <div class="search-header">
+                <div class="eyebrow">Property Search</div>
+                <h2 class="section-heading">Find Your <em>Perfect</em> Match</h2>
+                <p class="section-subtext">Use our smart search to filter properties by location, type, and budget. Your dream home is just a click away.</p>
+            </div>
+
+            <form class="search-form" id="search-form" onsubmit="return false;">
+                <div class="search-field">
+                    <label for="search-location">Location</label>
+                    <select id="search-location">
+                        <option>All Locations</option>
+                        <option>Austin, TX</option>
+                        <option>Denver, CO</option>
+                        <option>Maplewood, NJ</option>
+                        <option>Portland, OR</option>
+                        <option>Charlotte, NC</option>
+                    </select>
+                </div>
+                <div class="search-field">
+                    <label for="search-type">Property Type</label>
+                    <select id="search-type">
+                        <option>All Types</option>
+                        <option>House</option>
+                        <option>Apartment</option>
+                        <option>Condo</option>
+                        <option>Townhouse</option>
+                    </select>
+                </div>
+                <div class="search-field">
+                    <label for="search-beds">Bedrooms</label>
+                    <select id="search-beds">
+                        <option>Any</option>
+                        <option>1+</option>
+                        <option>2+</option>
+                        <option>3+</option>
+                        <option>4+</option>
+                    </select>
+                </div>
+                <div class="search-field">
+                    <label for="search-price">Max Price</label>
+                    <select id="search-price">
+                        <option>No Max</option>
+                        <option>$200,000</option>
+                        <option>$350,000</option>
+                        <option>$500,000</option>
+                        <option>$750,000</option>
+                        <option>$1,000,000+</option>
+                    </select>
+                </div>
+                <button type="submit" class="search-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                    Search
+                </button>
+            </form>
         </div>
     </div>
 </section>
@@ -134,49 +247,92 @@
     <div class="container">
         <!-- Header -->
         <div class="services-header">
-            <div class="eyebrow reveal-up">What We Do</div>
-            <h2 class="section-heading reveal-up">Crafted for <em>Every</em> World</h2>
-            <p class="section-subtext reveal-up">From private residences to five-star hotels, we bring the same obsessive attention to detail and uncompromising standard of excellence.</p>
+            <div class="eyebrow reveal-up">What We Offer</div>
+            <h2 class="section-heading reveal-up">Expert Services for <em>Every</em> Step</h2>
+            <p class="section-subtext reveal-up">Whether you're buying, selling, or investing — we provide personalized guidance to help you make the best real estate decisions.</p>
         </div>
 
         <!-- Cards -->
         <div class="services-grid">
             <!-- Card 1 -->
             <div class="service-card reveal-up">
-                <div style="overflow:hidden;">
-                    <img class="service-card-image" src="images/service-residential.jpg" alt="Luxury residential interior design">
+                <div class="service-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 22V8l9-6 9 6v14"/><path d="M9 22V12h6v10"/></svg>
                 </div>
-                <div class="service-card-content">
-                    <div class="service-card-number">01</div>
-                    <h3 class="service-card-title">Residential</h3>
-                    <p class="service-card-desc">Penthouses, estates, and private residences designed as sanctuaries — deeply personal, uncompromisingly luxurious.</p>
-                    <a href="#" class="service-card-link">Explore <span class="arrow"></span></a>
-                </div>
+                <div class="service-card-number">01</div>
+                <h3 class="service-card-title">Buying a Home</h3>
+                <p class="service-card-desc">From first viewings to closing day, we guide you through every step — finding properties that match your lifestyle, budget, and future goals.</p>
             </div>
 
             <!-- Card 2 -->
             <div class="service-card reveal-up">
-                <div style="overflow:hidden;">
-                    <img class="service-card-image" src="images/service-commercial.jpg" alt="Luxury commercial interior design">
+                <div class="service-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
                 </div>
-                <div class="service-card-content">
-                    <div class="service-card-number">02</div>
-                    <h3 class="service-card-title">Commercial</h3>
-                    <p class="service-card-desc">Executive offices, showrooms, and flagship spaces that command presence and elevate every brand interaction.</p>
-                    <a href="#" class="service-card-link">Explore <span class="arrow"></span></a>
-                </div>
+                <div class="service-card-number">02</div>
+                <h3 class="service-card-title">Selling Your Property</h3>
+                <p class="service-card-desc">We create a tailored marketing strategy — professional photography, staged virtual tours, and targeted advertising to sell your home fast and at top value.</p>
             </div>
 
             <!-- Card 3 -->
             <div class="service-card reveal-up">
-                <div style="overflow:hidden;">
-                    <img class="service-card-image" src="images/service-hospitality.jpg" alt="Luxury hospitality interior design">
+                <div class="service-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19V6l12-3v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                 </div>
-                <div class="service-card-content">
-                    <div class="service-card-number">03</div>
-                    <h3 class="service-card-title">Hospitality</h3>
-                    <p class="service-card-desc">Hotels, restaurants, and private clubs where every detail conspires to create an unforgettable guest experience.</p>
-                    <a href="#" class="service-card-link">Explore <span class="arrow"></span></a>
+                <div class="service-card-number">03</div>
+                <h3 class="service-card-title">Market Analysis</h3>
+                <p class="service-card-desc">Get real-time market insights, property valuations, and neighborhood trends so you can make informed decisions with confidence.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     ABOUT SECTION
+     ═══════════════════════════════════════ -->
+<section class="about-section" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <!-- Left Column -->
+            <div class="about-left">
+                <div class="eyebrow reveal-up">About Us</div>
+                <h2 class="section-heading reveal-up">Your Neighborhood<br><em>Expert</em></h2>
+                <div class="gold-line reveal-up"></div>
+                <p class="reveal-up">
+                    Premier Realty is a trusted local real estate brokerage dedicated to helping families 
+                    find their perfect home. With years of experience and deep knowledge of the local market, 
+                    we make the buying and selling process simple, transparent, and stress-free.
+                </p>
+                <p class="reveal-up" style="margin-top: 14px;">
+                    We believe that finding a home is about more than square footage — it's about finding 
+                    the right neighborhood, the right community, and the right fit for your life. Every client 
+                    gets our undivided attention and honest, expert advice.
+                </p>
+            </div>
+
+            <!-- Divider -->
+            <div class="about-divider reveal-scale"></div>
+
+            <!-- Right Column -->
+            <div class="about-right">
+                <blockquote class="about-quote reveal-right">
+                    "A great home isn't just a building — it's the neighborhood you walk through, the neighbors you wave to, and the memories you build inside."
+                </blockquote>
+                <p class="about-quote-author reveal-right">— Michael Torres, Lead Broker</p>
+
+                <div class="about-stats">
+                    <div class="stat-item reveal-up">
+                        <div class="stat-number" data-count="12">0</div>
+                        <div class="stat-label">Years</div>
+                    </div>
+                    <div class="stat-item reveal-up">
+                        <div class="stat-number" data-count="580">0</div>
+                        <div class="stat-label">Homes Sold</div>
+                    </div>
+                    <div class="stat-item reveal-up">
+                        <div class="stat-number" data-count="98">0</div>
+                        <div class="stat-label">% Satisfaction</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -184,14 +340,14 @@
 </section>
 
 <!-- ═══════════════════════════════════════
-     PORTFOLIO — HORIZONTAL SCROLL
+     PORTFOLIO — RECENT SALES (HORIZONTAL SCROLL)
      ═══════════════════════════════════════ -->
 <section class="portfolio-section" id="portfolio">
     <div class="container">
         <div class="portfolio-header">
-            <div class="eyebrow reveal-up">Selected Work</div>
-            <h2 class="section-heading reveal-up">A Curated <em>Portfolio</em></h2>
-            <p class="section-subtext reveal-up">Each project is a unique narrative — a collaboration between our vision and our client's world.</p>
+            <div class="eyebrow reveal-up">Recent Sales</div>
+            <h2 class="section-heading reveal-up">Homes We've <em>Sold</em></h2>
+            <p class="section-subtext reveal-up">A selection of recently closed deals — happy families, great neighborhoods, and exceptional results.</p>
         </div>
     </div>
 
@@ -199,50 +355,50 @@
         <div class="portfolio-track" id="portfolio-track">
             <!-- Item 1 -->
             <div class="portfolio-item">
-                <img src="images/portfolio-penthouse.jpg" alt="Manhattan Penthouse by Atelier Noir">
+                <img src="images/listing-suburban-home.jpg" alt="Recently sold modern home">
                 <div class="portfolio-item-overlay">
-                    <div class="portfolio-item-category">Residential</div>
-                    <div class="portfolio-item-title">Manhattan Penthouse</div>
+                    <div class="portfolio-item-category">Sold · $485,000</div>
+                    <div class="portfolio-item-title">Oakwood Heights</div>
                 </div>
             </div>
             <!-- Item 2 -->
             <div class="portfolio-item">
-                <img src="images/portfolio-bathroom.jpg" alt="Spa Retreat Bathroom by Atelier Noir">
+                <img src="images/listing-apartment.jpg" alt="Recently sold downtown apartment">
                 <div class="portfolio-item-overlay">
-                    <div class="portfolio-item-category">Residential</div>
-                    <div class="portfolio-item-title">The Spa Retreat</div>
+                    <div class="portfolio-item-category">Sold · $325,000</div>
+                    <div class="portfolio-item-title">Skyline Loft 1402</div>
                 </div>
             </div>
             <!-- Item 3 -->
             <div class="portfolio-item">
-                <img src="images/portfolio-dining.jpg" alt="Private Dining by Atelier Noir">
+                <img src="images/listing-kitchen.jpg" alt="Renovated kitchen in sold property">
                 <div class="portfolio-item-overlay">
-                    <div class="portfolio-item-category">Hospitality</div>
-                    <div class="portfolio-item-title">The Wine Room</div>
+                    <div class="portfolio-item-category">Sold · $410,000</div>
+                    <div class="portfolio-item-title">Cedar Park Renovation</div>
                 </div>
             </div>
             <!-- Item 4 -->
             <div class="portfolio-item">
-                <img src="images/portfolio-bedroom.jpg" alt="Alpine Suite by Atelier Noir">
+                <img src="images/listing-family-home.jpg" alt="Sold craftsman family home">
                 <div class="portfolio-item-overlay">
-                    <div class="portfolio-item-category">Residential</div>
-                    <div class="portfolio-item-title">Alpine Suite</div>
+                    <div class="portfolio-item-category">Sold · $395,000</div>
+                    <div class="portfolio-item-title">Elm Street Classic</div>
                 </div>
             </div>
-            <!-- Item 5 (reuse) -->
+            <!-- Item 5 -->
             <div class="portfolio-item">
-                <img src="images/service-commercial.jpg" alt="Executive Tower by Atelier Noir">
+                <img src="images/listing-townhouse.jpg" alt="Sold modern townhouse">
                 <div class="portfolio-item-overlay">
-                    <div class="portfolio-item-category">Commercial</div>
-                    <div class="portfolio-item-title">Executive Tower</div>
+                    <div class="portfolio-item-category">Sold · $340,000</div>
+                    <div class="portfolio-item-title">Riverside Townhome</div>
                 </div>
             </div>
-            <!-- Item 6 (reuse) -->
+            <!-- Item 6 -->
             <div class="portfolio-item">
-                <img src="images/service-hospitality.jpg" alt="The Grand Lobby by Atelier Noir">
+                <img src="images/listing-backyard.jpg" alt="Sold home with pool">
                 <div class="portfolio-item-overlay">
-                    <div class="portfolio-item-category">Hospitality</div>
-                    <div class="portfolio-item-title">The Grand Lobby</div>
+                    <div class="portfolio-item-category">Sold · $520,000</div>
+                    <div class="portfolio-item-title">Sunset Pool Estate</div>
                 </div>
             </div>
         </div>
@@ -256,29 +412,29 @@
     <div class="container">
         <div class="testimonials-inner">
             <div class="eyebrow reveal-up" style="justify-content:center;">
-                <span style="display:none;"></span>Client Voices
+                <span style="display:none;"></span>Client Reviews
             </div>
             <div class="testimonials-carousel" id="testimonials-carousel">
                 <!-- Slide 1 -->
                 <div class="testimonial-slide active" data-slide="0">
                     <div class="testimonial-quote-mark">"</div>
-                    <p class="testimonial-text">Atelier Noir didn't just design our home — they understood our soul and translated it into every surface, every shadow, every moment of light.</p>
-                    <div class="testimonial-author">Victoria Ashford</div>
-                    <div class="testimonial-role">Private Client · Greenwich, CT</div>
+                    <p class="testimonial-text">Premier Realty made our first home purchase feel effortless. They found us the perfect neighborhood, negotiated a great price, and walked us through every detail.</p>
+                    <div class="testimonial-author">Sarah & James Mitchell</div>
+                    <div class="testimonial-role">First-Time Buyers · Austin, TX</div>
                 </div>
                 <!-- Slide 2 -->
                 <div class="testimonial-slide" data-slide="1">
                     <div class="testimonial-quote-mark">"</div>
-                    <p class="testimonial-text">Working with this team felt like collaborating with artists. The result is a hotel lobby that stops every guest in their tracks.</p>
-                    <div class="testimonial-author">James Chen</div>
-                    <div class="testimonial-role">CEO · The Peninsula Group</div>
+                    <p class="testimonial-text">We sold our condo in 11 days above asking price. The marketing strategy and staging advice were game-changers. We couldn't have asked for a better experience.</p>
+                    <div class="testimonial-author">David Nguyen</div>
+                    <div class="testimonial-role">Home Seller · Denver, CO</div>
                 </div>
                 <!-- Slide 3 -->
                 <div class="testimonial-slide" data-slide="2">
                     <div class="testimonial-quote-mark">"</div>
-                    <p class="testimonial-text">Fifteen years and three projects later, there is no one else I would trust with my spaces. They are, quite simply, the best in the world.</p>
-                    <div class="testimonial-author">Sofia Reyes</div>
-                    <div class="testimonial-role">Art Collector · Miami Beach, FL</div>
+                    <p class="testimonial-text">I've worked with many agents over the years, but this team truly understands what clients need. Professional, responsive, and genuinely caring. Highly recommended.</p>
+                    <div class="testimonial-author">Maria Rodriguez</div>
+                    <div class="testimonial-role">Repeat Client · Portland, OR</div>
                 </div>
             </div>
             <div class="testimonial-dots" id="testimonial-dots">
@@ -294,12 +450,14 @@
      CTA SECTION
      ═══════════════════════════════════════ -->
 <section class="cta-section" id="contact">
+    <div class="cta-deco cta-deco-1"></div>
+    <div class="cta-deco cta-deco-2"></div>
     <div class="container">
         <div class="cta-inner">
-            <div class="eyebrow reveal-up">Let's Create Together</div>
-            <h2 class="section-heading reveal-up">Your Vision,<br>Our <em>Mastery</em></h2>
-            <p class="section-subtext reveal-up">Every extraordinary space begins with a single conversation. Tell us about your vision, and we'll show you what's possible.</p>
-            <a href="#" class="cta-btn reveal-up"><span>Schedule a Consultation</span></a>
+            <div class="eyebrow reveal-up">Let's Get Started</div>
+            <h2 class="section-heading reveal-up">Ready to Find<br>Your <em>Next Home</em>?</h2>
+            <p class="section-subtext reveal-up">Whether you're buying or selling, our team is here to guide you. Schedule a free, no-obligation consultation today.</p>
+            <a href="#" class="cta-btn reveal-up"><span>Schedule a Free Consultation</span></a>
         </div>
     </div>
 </section>
@@ -312,43 +470,50 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <div class="nav-logo">
-                    <span class="nav-logo-name">Atelier Noir</span>
-                    <span class="nav-logo-tagline">Interior Design</span>
+                    <span class="nav-logo-name">Premier Realty</span>
+                    <span class="nav-logo-tagline">Real Estate</span>
                 </div>
-                <p>Crafting extraordinary spaces for extraordinary lives. New York · Los Angeles · Miami · London</p>
+                <p>Helping families find their perfect home since 2012. Serving communities across the United States.</p>
             </div>
             <div class="footer-col">
                 <h4 class="footer-col-title">Services</h4>
                 <ul>
-                    <li><a href="#">Residential</a></li>
-                    <li><a href="#">Commercial</a></li>
-                    <li><a href="#">Hospitality</a></li>
-                    <li><a href="#">Art Curation</a></li>
+                    <li><a href="#">Buying</a></li>
+                    <li><a href="#">Selling</a></li>
+                    <li><a href="#">Market Analysis</a></li>
+                    <li><a href="#">Home Valuation</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4 class="footer-col-title">Studio</h4>
+                <h4 class="footer-col-title">Company</h4>
                 <ul>
                     <li><a href="#">About Us</a></li>
-                    <li><a href="#">Our Process</a></li>
-                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Testimonials</a></li>
                     <li><a href="#">Careers</a></li>
                 </ul>
             </div>
-
+            <div class="footer-col">
+                <h4 class="footer-col-title">Contact</h4>
+                <ul>
+                    <li><a href="#">(555) 123-4567</a></li>
+                    <li><a href="#">hello@premierrealty.com</a></li>
+                    <li><a href="#">Schedule a Call</a></li>
+                </ul>
+            </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Atelier Noir Interiors. All rights reserved.</p>
+            <p>&copy; 2024 Premier Realty. All rights reserved.</p>
             <div class="footer-socials">
                 <a href="#">Instagram</a>
-                <a href="#">Pinterest</a>
+                <a href="#">Facebook</a>
                 <a href="#">LinkedIn</a>
             </div>
         </div>
     </div>
 </footer>
 
-<script src="main.js?v=7"></script>
+<script src="main.js?v=10"></script>
 <script src="personalize.js?v=5"></script>
 </body>
 </html>

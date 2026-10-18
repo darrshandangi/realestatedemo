@@ -18,27 +18,23 @@
     const rawCity = params.get('city') || params.get('loc');
     const rawPhone = params.get('phone') || params.get('tel');
     const agencyName = params.get('agency') || "Darrshan Dangi";
-    const ctaLink = params.get('cal') || params.get('cta') || "https://cal.com/";
+    const ctaLink = params.get('cal') || params.get('cta') || "#contact";
     const hideBanner = params.get('banner') === 'false' || params.get('banner') === '0';
     const createdAtParam = params.get('created'); // Optional ISO or timestamp
 
-    if (!rawName && !rawCity && !rawPhone) {
-        return; // Leave default demo website intact
-    }
-
-    const businessName = rawName ? rawName.trim() : null;
+    const businessName = rawName ? rawName.trim() : "Premier Realty";
     const city = rawCity ? rawCity.trim() : null;
     const phone = rawPhone ? rawPhone.trim() : null;
 
     function applyPersonalization() {
         // --- 1. Document Title & Meta ---
-        if (businessName) {
-            const locPart = city ? ` — ${city}` : ' — Luxury Interior Design & Real Estate';
+        if (rawName) {
+            const locPart = city ? ` — ${city}` : ' — Premier Real Estate Broker';
             document.title = `${businessName}${locPart}`;
         }
 
         // --- 2. Nav Logo & Footer Logo ---
-        if (businessName) {
+        if (rawName) {
             document.querySelectorAll('.nav-logo-name').forEach(el => {
                 el.textContent = businessName;
             });
@@ -63,18 +59,19 @@
         if (city) {
             const heroEyebrow = document.querySelector('#hero-text-1 .hero-eyebrow');
             if (heroEyebrow) {
-                heroEyebrow.textContent = `Bespoke Architectural Excellence · ${city}`;
+                heroEyebrow.textContent = `Your Trusted Real Estate Partner · ${city}`;
             }
         }
 
         // --- 5. DOM Text Replacement ---
-        if (businessName) {
-            replaceTextInTree(document.body, "Atelier Noir Interiors", `${businessName} Interiors`);
+        if (rawName) {
+            replaceTextInTree(document.body, "Premier Realty", businessName);
             replaceTextInTree(document.body, "Atelier Noir", businessName);
         }
 
         if (city) {
-            replaceTextInTree(document.body, "New York", city);
+            replaceTextInTree(document.body, "Austin, TX", city);
+            replaceTextInTree(document.body, "Austin", city);
         }
 
         // --- 6. Phone Links ---
@@ -86,7 +83,7 @@
         }
 
         // --- 7. Floating Pitch Banner with 7-Day Countdown Urgency ---
-        if (businessName && !hideBanner) {
+        if (!hideBanner) {
             injectOutreachBanner(businessName, agencyName, ctaLink, createdAtParam);
         }
     }

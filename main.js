@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   ATELIER NOIR INTERIORS — Main JavaScript
+   PREMIER REALTY — Main JavaScript
    GSAP Animations · Sparkle Cursor · Scroll Frame Sequence
    ═══════════════════════════════════════════════════════════════ */
 
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
 
     /* ═══════════════════════════════════════
-       1. SPARKLE MOUSE CURSOR
+       1. SPARKLE MOUSE CURSOR (subtle teal sparkles)
        ═══════════════════════════════════════ */
     const sparkleCanvas = document.getElementById('sparkle-canvas');
     const sparkleCtx = sparkleCanvas.getContext('2d');
@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
         mouseX = e.clientX;
         mouseY = e.clientY;
         isMouseOnPage = true;
-        // Spawn sparkles on move (more dense since they are tiny)
-        for (let i = 0; i < 4; i++) {
+        // Spawn sparkles on move
+        for (let i = 0; i < 3; i++) {
             sparkles.push(createSparkle(mouseX, mouseY));
         }
     });
@@ -38,21 +38,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createSparkle(x, y) {
         const angle = Math.random() * Math.PI * 2;
-        const speed = Math.random() * 1.2 + 0.3;
-        const size = Math.random() * 1.0 + 0.4; // Tiny size (0.4 to 1.4)
-        const goldHue = 35 + Math.random() * 15;
+        const speed = Math.random() * 1.0 + 0.3;
+        const size = Math.random() * 1.2 + 0.3;
+        // Teal-based sparkle color palette
+        const hue = 160 + Math.random() * 20;
         return {
-            x: x + (Math.random() - 0.5) * 16,
-            y: y + (Math.random() - 0.5) * 16,
+            x: x + (Math.random() - 0.5) * 14,
+            y: y + (Math.random() - 0.5) * 14,
             vx: Math.cos(angle) * speed,
-            vy: Math.sin(angle) * speed - 0.5,
+            vy: Math.sin(angle) * speed - 0.4,
             size,
             life: 1,
-            decay: 0.015 + Math.random() * 0.02,
+            decay: 0.018 + Math.random() * 0.02,
             rotation: Math.random() * 360,
-            rotationSpeed: (Math.random() - 0.5) * 8,
-            color: `hsl(${goldHue}, 70%, ${55 + Math.random() * 20}%)`,
-            type: 'star', // ONLY stars, no big circles
+            rotationSpeed: (Math.random() - 0.5) * 6,
+            color: `hsl(${hue}, 55%, ${50 + Math.random() * 20}%)`,
+            type: 'star',
         };
     }
 
@@ -88,9 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (s.type === 'star') {
                 sparkleCtx.strokeStyle = s.color;
                 sparkleCtx.lineWidth = 0.6;
-                drawStar(sparkleCtx, s.x, s.y, s.size, s.rotation); // smaller size
+                drawStar(sparkleCtx, s.x, s.y, s.size, s.rotation);
             } 
-            // Removed all circle shapes and big glows
         }
 
         sparkleCtx.globalAlpha = 1;
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSparkles();
 
     /* ═══════════════════════════════════════
-       2. HERO SCROLL FRAME ANIMATION
+       2. HERO SCROLL FRAME ANIMATION (PRESERVED)
        ═══════════════════════════════════════ */
     const FRAME_COUNT = 300;
     const SCROLL_HEIGHT = 10000;
@@ -255,14 +255,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Reveal Up
     gsap.utils.toArray('.reveal-up').forEach((el) => {
         gsap.fromTo(el,
-            { opacity: 0, y: 60 },
+            { opacity: 0, y: 40 },
             {
                 opacity: 1, y: 0,
-                duration: 1,
+                duration: 0.9,
                 ease: 'power3.out',
                 scrollTrigger: {
                     trigger: el,
-                    start: 'top 88%',
+                    start: 'top 90%',
                     toggleActions: 'play none none none',
                 }
             }
@@ -272,14 +272,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Reveal Left
     gsap.utils.toArray('.reveal-left').forEach((el) => {
         gsap.fromTo(el,
-            { opacity: 0, x: -60 },
+            { opacity: 0, x: -40 },
             {
                 opacity: 1, x: 0,
-                duration: 1,
+                duration: 0.9,
                 ease: 'power3.out',
                 scrollTrigger: {
                     trigger: el,
-                    start: 'top 88%',
+                    start: 'top 90%',
                     toggleActions: 'play none none none',
                 }
             }
@@ -289,14 +289,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Reveal Right
     gsap.utils.toArray('.reveal-right').forEach((el) => {
         gsap.fromTo(el,
-            { opacity: 0, x: 60 },
+            { opacity: 0, x: 40 },
             {
                 opacity: 1, x: 0,
-                duration: 1,
+                duration: 0.9,
                 ease: 'power3.out',
                 scrollTrigger: {
                     trigger: el,
-                    start: 'top 88%',
+                    start: 'top 90%',
                     toggleActions: 'play none none none',
                 }
             }
@@ -306,14 +306,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Reveal Scale
     gsap.utils.toArray('.reveal-scale').forEach((el) => {
         gsap.fromTo(el,
-            { opacity: 0, scale: 0.9 },
+            { opacity: 0, scale: 0.95 },
             {
                 opacity: 1, scale: 1,
-                duration: 1,
+                duration: 0.9,
                 ease: 'power3.out',
                 scrollTrigger: {
                     trigger: el,
-                    start: 'top 88%',
+                    start: 'top 90%',
                     toggleActions: 'play none none none',
                 }
             }
@@ -348,24 +348,37 @@ document.addEventListener('DOMContentLoaded', () => {
        8. SERVICE CARD HOVER (GSAP)
        ═══════════════════════════════════════ */
     document.querySelectorAll('.service-card').forEach(card => {
-        const img = card.querySelector('.service-card-image');
+        const icon = card.querySelector('.service-card-icon');
         const number = card.querySelector('.service-card-number');
 
         card.addEventListener('mouseenter', () => {
-            gsap.to(img, { scale: 1.06, duration: 0.6, ease: 'power2.out' });
-            gsap.to(number, { color: 'rgba(201,169,110,0.25)', duration: 0.4 });
+            gsap.to(number, { color: 'rgba(26,107,90,0.15)', duration: 0.4 });
             gsap.to(card, { y: -6, duration: 0.4, ease: 'power2.out' });
         });
 
         card.addEventListener('mouseleave', () => {
-            gsap.to(img, { scale: 1, duration: 0.6, ease: 'power2.out' });
-            gsap.to(number, { color: 'rgba(201,169,110,0.12)', duration: 0.4 });
+            gsap.to(number, { color: 'rgba(26,107,90,0.08)', duration: 0.4 });
             gsap.to(card, { y: 0, duration: 0.4, ease: 'power2.out' });
         });
     });
 
     /* ═══════════════════════════════════════
-       9. PORTFOLIO HORIZONTAL SCROLL (GSAP)
+       9. LISTING CARD HOVER (GSAP)
+       ═══════════════════════════════════════ */
+    document.querySelectorAll('.listing-card').forEach(card => {
+        const img = card.querySelector('.listing-card-image');
+
+        card.addEventListener('mouseenter', () => {
+            gsap.to(img, { scale: 1.06, duration: 0.6, ease: 'power2.out' });
+        });
+
+        card.addEventListener('mouseleave', () => {
+            gsap.to(img, { scale: 1, duration: 0.6, ease: 'power2.out' });
+        });
+    });
+
+    /* ═══════════════════════════════════════
+       10. PORTFOLIO HORIZONTAL SCROLL (GSAP)
        ═══════════════════════════════════════ */
     const portfolioTrack = document.getElementById('portfolio-track');
     const portfolioWrapper = document.getElementById('portfolio-scroll-wrapper');
@@ -391,7 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Parallax on individual items
         gsap.utils.toArray('.portfolio-item img').forEach((img) => {
             gsap.fromTo(img,
-                { scale: 1.15 },
+                { scale: 1.12 },
                 {
                     scale: 1,
                     ease: 'none',
@@ -408,7 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ═══════════════════════════════════════
-       10. TESTIMONIAL CAROUSEL (GSAP)
+       11. TESTIMONIAL CAROUSEL (GSAP)
        ═══════════════════════════════════════ */
     const slides = document.querySelectorAll('.testimonial-slide');
     const dots = document.querySelectorAll('.testimonial-dot');
@@ -468,28 +481,22 @@ document.addEventListener('DOMContentLoaded', () => {
     autoPlay();
 
     /* ═══════════════════════════════════════
-       11. CTA SECTION PARALLAX CORNERS
+       12. CTA SECTION FLOATING DECO ANIMATION
        ═══════════════════════════════════════ */
-    const ctaInner = document.querySelector('.cta-inner');
-    if (ctaInner) {
-        gsap.fromTo(ctaInner,
-            { borderColor: 'rgba(201,169,110,0.05)' },
-            {
-                borderColor: 'rgba(201,169,110,0.3)',
-                duration: 1,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: ctaInner,
-                    start: 'top 80%',
-                    end: 'bottom 20%',
-                    scrub: 1,
-                }
-            }
-        );
-    }
+    const ctaDecos = document.querySelectorAll('.cta-deco');
+    ctaDecos.forEach((deco, i) => {
+        gsap.to(deco, {
+            y: i === 0 ? 20 : -15,
+            x: i === 0 ? -10 : 8,
+            duration: 4 + i,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut',
+        });
+    });
 
     /* ═══════════════════════════════════════
-       12. FOOTER REVEAL
+       13. FOOTER REVEAL
        ═══════════════════════════════════════ */
     gsap.fromTo('.footer-grid',
         { opacity: 0, y: 40 },
@@ -506,7 +513,7 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     /* ═══════════════════════════════════════
-       13. MOBILE NAV TOGGLE
+       14. MOBILE NAV TOGGLE
        ═══════════════════════════════════════ */
     const navToggle = document.getElementById('nav-toggle');
     const navLinks = document.getElementById('nav-links');
@@ -522,11 +529,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 navLinks.style.top = '100%';
                 navLinks.style.left = '0';
                 navLinks.style.width = '100%';
-                navLinks.style.background = 'rgba(10,10,10,0.95)';
+                navLinks.style.background = 'rgba(255,255,255,0.97)';
                 navLinks.style.backdropFilter = 'blur(20px)';
                 navLinks.style.padding = '24px';
-                navLinks.style.gap = '20px';
-                navLinks.style.borderBottom = '1px solid rgba(201,169,110,0.15)';
+                navLinks.style.gap = '16px';
+                navLinks.style.borderBottom = '1px solid rgba(0,0,0,0.08)';
+                navLinks.style.boxShadow = '0 8px 24px rgba(0,0,0,0.06)';
 
                 gsap.fromTo(navLinks.children,
                     { opacity: 0, x: -20 },
@@ -551,6 +559,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         navLinks.style.padding = '';
                         navLinks.style.gap = '';
                         navLinks.style.borderBottom = '';
+                        navLinks.style.boxShadow = '';
                     }
                 });
             }
@@ -558,7 +567,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ═══════════════════════════════════════
-       14. SMOOTH SCROLL FOR ANCHOR LINKS
+       15. SMOOTH SCROLL FOR ANCHOR LINKS
        ═══════════════════════════════════════ */
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
