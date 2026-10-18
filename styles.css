@@ -363,10 +363,10 @@ button {
     font-weight: 700;
     letter-spacing: 0.35em;
     text-transform: uppercase;
-    color: #0f172a;
+    color: var(--accent);
     text-shadow: none;
     margin-bottom: 16px;
-    opacity: 0.85;
+    opacity: 1;
 }
 
 .hero-text-overlay h1 {
