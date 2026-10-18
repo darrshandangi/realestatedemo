@@ -131,12 +131,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const pct = Math.round((loadedCount / FRAME_COUNT) * 100);
             loaderBarFill.style.width = pct + '%';
             loaderPercent.textContent = pct + '%';
+            if (loadedCount >= 20 && !framesLoaded) {
+                // Allow user to interact immediately after initial buffer loads
+                heroLoader.classList.add('hidden');
+                heroImg.src = frameImages[0].src;
+            }
             if (loadedCount === FRAME_COUNT) {
                 framesLoaded = true;
                 heroLoader.classList.add('hidden');
                 heroImg.src = frameImages[0].src;
                 // Trigger entrance animations after load
                 playEntranceAnimation();
+                ScrollTrigger.refresh();
             }
         };
         frameImages[i] = img;
@@ -153,14 +159,13 @@ document.addEventListener('DOMContentLoaded', () => {
             trigger: heroContainer,
             start: "top top",
             end: "bottom bottom",
-            scrub: 1, // Adds a 1-second smoothing/momentum effect to the scroll
+            scrub: 0.5,
         },
         onUpdate: () => {
-            if (framesLoaded) {
-                const target = frameImages[frameObj.currentFrame];
-                if (target && target.complete) {
-                    heroImg.src = target.src;
-                }
+            const idx = Math.min(Math.max(Math.round(frameObj.currentFrame), 0), FRAME_COUNT - 1);
+            const target = frameImages[idx];
+            if (target && target.src && heroImg.src !== target.src) {
+                heroImg.src = target.src;
             }
         }
     });
