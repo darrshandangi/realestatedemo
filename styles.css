@@ -374,16 +374,17 @@ button {
     font-size: clamp(48px, 8vw, 104px);
     font-weight: 500;
     line-height: 1.05;
-    background: linear-gradient(145deg, #090a0f 0%, #353846 32%, #050508 55%, #3d4152 75%, #08090e 100%);
+    color: #bfa15f;
+    background: linear-gradient(145deg, #a68242 0%, #d8b874 35%, #9c7839 65%, #c8a661 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.28)) drop-shadow(0 1px 1px rgba(255, 255, 255, 0.45));
+    filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.22));
     margin: 0;
 }
 
 .hero-text-overlay h1 em {
     font-style: italic;
-    background: linear-gradient(145deg, #090a0f 0%, #353846 32%, #050508 55%, #3d4152 75%, #08090e 100%);
+    background: linear-gradient(145deg, #a68242 0%, #d8b874 35%, #9c7839 65%, #c8a661 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
