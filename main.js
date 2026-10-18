@@ -159,14 +159,12 @@ document.addEventListener('DOMContentLoaded', () => {
             trigger: heroContainer,
             start: "top top",
             end: "bottom bottom",
-            scrub: 0.5,
+            scrub: 0.3,
         },
         onUpdate: () => {
             const idx = Math.min(Math.max(Math.round(frameObj.currentFrame), 0), FRAME_COUNT - 1);
-            const target = frameImages[idx];
-            if (target && target.src && heroImg.src !== target.src) {
-                heroImg.src = target.src;
-            }
+            const num = String(idx + 1).padStart(3, '0');
+            heroImg.src = `${frameFolder}/ezgif-frame-${num}.jpg`;
         }
     });
 
