@@ -226,8 +226,11 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ═══════════════════════════════════════
        5. ENTRANCE ANIMATION (after frames load)
        ═══════════════════════════════════════ */
+    let entrancePlayed = false;
     function playEntranceAnimation() {
-        const tl = gsap.timeline({ delay: 0.3 });
+        if (entrancePlayed) return;
+        entrancePlayed = true;
+        const tl = gsap.timeline({ delay: 0.1 });
 
         // Navbar
         tl.fromTo('#nav-logo',
@@ -241,9 +244,12 @@ document.addEventListener('DOMContentLoaded', () => {
             0.2
         );
 
-        // Setup hero text animations after entrance
+        // Setup hero text animations
         setupHeroTextAnimations();
     }
+
+    // Call entrance & text animations immediately so page is fully interactive from frame 1
+    playEntranceAnimation();
 
     /* ═══════════════════════════════════════
        6. SCROLL-TRIGGERED SECTION REVEALS
