@@ -281,6 +281,7 @@ button {
     width: 100%;
     position: relative;
     background: #000;
+    z-index: 1;
 }
 
 .hero-sticky {
@@ -289,6 +290,7 @@ button {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    z-index: 1;
 }
 
 .hero-frame-img {
@@ -503,6 +505,7 @@ button {
     background: var(--bg-primary);
     position: relative;
     overflow: hidden;
+    z-index: 2;
 }
 
 .about-grid {
@@ -593,6 +596,7 @@ button {
     padding: var(--section-padding) 0;
     background: var(--bg-secondary);
     position: relative;
+    z-index: 2;
 }
 
 .services-header {
@@ -712,6 +716,8 @@ button {
     padding: var(--section-padding) 0 0;
     background: var(--bg-primary);
     overflow: hidden;
+    position: relative;
+    z-index: 2;
 }
 
 .portfolio-header {
