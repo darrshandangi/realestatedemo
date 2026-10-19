@@ -40,6 +40,11 @@
             });
         }
 
+        // --- 2.5 Update Chatbot Name Dynamically ---
+        if (window.updateChatbotBrand) {
+            window.updateChatbotBrand(businessName);
+        }
+
         // --- 3. Hero Section (H1) ---
         if (businessName) {
             const heroH1 = document.querySelector('#hero-text-1 h1');
